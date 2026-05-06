@@ -6,9 +6,25 @@ const config: Config = {
     extend: {
       colors: {
         bg: "#070810",
-        panel: "rgba(20, 22, 32, 0.7)",
-        panelSolid: "#11141d",
-        border: "rgba(255, 255, 255, 0.08)",
-        borderHi: "rgba(255, 255, 255, 0.14)",
-        muted: "#8a93a6",
-      
+        up: "#22c55e",
+        down: "#f43f5e",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
+      animation: {
+        "fade-in": "fadeIn 0.4s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
