@@ -1,13 +1,21 @@
-# Nasdaq Penny Stock Screener
+# Deep-Penny Screener · AI · Healthcare · Clean Energy
 
-Live screener for Nasdaq-listed stocks trading under $5. Quotes pulled from Yahoo Finance via [`yahoo-finance2`](https://github.com/gadicc/node-yahoo-finance2). No API key required.
+Live screener for Nasdaq deep-penny tickers (**under $1.50**) across three high-conviction themes:
+
+- **AI Infrastructure** — chip startups, AI platforms, edge compute (technology-based)
+- **Healthcare** — mRNA, genomics, biotech (demographic tailwind)
+- **Clean Energy** — EV, battery, charging (policy locked-in)
+
+Quotes pulled from Yahoo Finance via [`yahoo-finance2`](https://github.com/gadicc/node-yahoo-finance2). No API key required.
 
 ## Features
 
-- Live prices for ~600 Nasdaq penny tickers (curated list in `lib/tickers.ts`)
-- Filters: price range, minimum volume, minimum % change, free-text search
-- Sortable columns: symbol, price, % change, volume, market cap
-- Auto-cached for 60s on Vercel edge
+- Curated, categorized Nasdaq watchlist (see `lib/tickers.ts`)
+- Live thesis cards per category with avg %Δ and gainer count
+- Top 3 movers spotlight
+- Filters: category toggles, search, min volume, min %Δ
+- Sortable table, color-coded category chips, glassmorphic dark UI
+- 60s edge cache
 
 ## Local development
 
@@ -32,14 +40,4 @@ Or push this folder to a GitHub repo and click **Import Project** at https://ver
 1. Push to GitHub
 2. https://app.netlify.com → Add new site → Import from Git → pick the repo
 3. Build command: `npm run build`  ·  Publish directory: `.next`
-4. Install the **Next.js Runtime** plugin (Netlify suggests it automatically)
-
-## Customize the watchlist
-
-Yahoo Finance has no "all Nasdaq under $5" endpoint, so we maintain a curated list at
-`lib/tickers.ts`. Add/remove symbols freely; the API filters out anything that isn't
-listed on Nasdaq or has moved above $5.
-
-## Disclaimer
-
-Data is delayed and informational only. Not investment advice.
+4. Install the **Next.js Runtime** plugin (Netlify suggests it auto

@@ -1,15 +1,20 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Nasdaq Penny Stock Screener",
-  description: "Nasdaq listed penny stocks under $5 — live screener powered by Yahoo Finance.",
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className="min-h-screen bg-bg text-zinc-200">{children}</body>
-    </html>
-  );
-}
+  title: "Sub-$1.50 Screener · AI · Biotech · Clean Energy",
+  description:
+    "Live scre

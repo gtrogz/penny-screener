@@ -1,82 +1,106 @@
-// Curated list of Nasdaq-listed tickers historically trading as penny stocks (< $5).
-// Yahoo Finance has no "screener-by-exchange" API, so we maintain a watchlist
-// and filter live by current price. Edit/extend this list freely.
-export const NASDAQ_PENNY_TICKERS: string[] = [
-  "SNDL", "NAKD", "ZOM", "CTRM", "SHIP", "TOPS", "GLBS", "CASTOR",
-  "MARA", "RIOT", "BBIG", "ATER", "PROG", "AMC", "BBBYQ", "NILE",
-  "ENG", "ENSC", "OCGN", "NNOX", "INPX", "MULN", "AGFY", "GROM",
-  "BFRG", "BRSH", "BTCT", "BURU", "BWAY", "BYRN", "CCTG", "CDIO",
-  "CDTX", "CDXC", "CEAD", "CELU", "CETX", "CGTX", "CHEK", "CIFR",
-  "CISO", "CLNN", "CLRO", "CLSD", "CLSK", "CMAX", "CMND", "CMRX",
-  "CNET", "CNFR", "CNSP", "CNTM", "CODA", "COGT", "COSM", "CPSH",
-  "CRDF", "CREG", "CRESY", "CRGX", "CRKN", "CRMD", "CRTO", "CRVO",
-  "CTHR", "CTNT", "CTSO", "CTXR", "CUE", "CVKD", "CVRX", "CXAI",
-  "CYAN", "CYCC", "CYCN", "CYRX", "CYTH", "CYTK", "DARE", "DATS",
-  "DAVE", "DBGI", "DERM", "DFLI", "DGLY", "DHAI", "DIBS", "DLPN",
-  "DOMH", "DRCT", "DRMA", "DRTS", "DRUG", "DTSS", "DUOT", "DXLG",
-  "DYAI", "EBET", "EDAP", "EDBL", "EFOI", "EFTR", "EGAN", "EGRX",
-  "EHTH", "EJH", "EKSO", "ELDN", "ELTK", "ELYM", "EM", "EMKR",
-  "ENLV", "ENVB", "ENVX", "EOLS", "EPIX", "EPSN", "EQ", "EQX",
-  "ESEA", "ESGL", "ESGR", "ESPR", "ESSA", "ETAO", "ETON", "EUDA",
-  "EVAX", "EVGN", "EVLV", "EVOK", "EXAI", "EYE", "EYEN", "EYPT",
-  "FAMI", "FATBB", "FBLG", "FCEL", "FCUV", "FFIE", "FGEN", "FNVT",
-  "FOSL", "FPAY", "FREE", "FRGT", "FRZA", "FSEA", "FTCI", "FTLF",
-  "GAN", "GBNH", "GDC", "GDHG", "GDRX", "GENE", "GEVO", "GFAI",
-  "GHG", "GIFI", "GIPR", "GLG", "GLMD", "GLSI", "GLTO", "GMBL",
-  "GMDA", "GNS", "GNTX", "GOEV", "GORV", "GOSS", "GOVX", "GPRO",
-  "GRI", "GRNQ", "GROV", "GTBP", "GTHX", "GURE", "GV", "HCDI",
-  "HEPA", "HIMX", "HIVE", "HKIT", "HOFV", "HOLO", "HOTH", "HOUR",
-  "HPCO", "HSDT", "HUBC", "HUDI", "HUSA", "HYPR", "IBIO", "ICCT",
-  "ICU", "IDEX", "IFBD", "IINN", "ILAG", "IMNN", "IMRA", "IMRX",
-  "IMUX", "INBS", "INDO", "INKT", "INM", "INMD", "INO", "INTZ",
-  "INVO", "INVZ", "IPDN", "IPHA", "IPSC", "IPWR", "IQ", "IRBT",
-  "IRIX", "ISPC", "ISPR", "ISSC", "ISUN", "ITRM", "IVDA", "JAGX",
-  "JFIN", "JFU", "JG", "JNVR", "JTAI", "JZ", "KALA", "KAVL",
-  "KOPN", "KORE", "KOSS", "KPRX", "KRMD", "KRNL", "KTRA", "KULR",
-  "KWE", "LASE", "LCFY", "LEDS", "LFLY", "LGCB", "LICN", "LIDR",
-  "LIFW", "LIQT", "LIVE", "LIXT", "LKCO", "LMFA", "LOBO", "LOCL",
-  "LOGC", "LOOP", "LPCN", "LPRO", "LQDA", "LSEA", "LTBR", "LTRX",
-  "LUCD", "LUNG", "LWAY", "LXEH", "LYRA", "LYT", "LYTS", "MARK",
-  "MARPS", "MASS", "MBOT", "MBRX", "MCAA", "MCRB", "MDAI", "MDRR",
-  "MDWD", "MEIP", "MFG", "MFI", "MGIH", "MGNX", "MGOL", "MGRX",
-  "MGYR", "MHUA", "MIRA", "MITK", "MLGO", "MNDR", "MNMD", "MNOV",
-  "MNPR", "MNRO", "MNTS", "MOB", "MOBX", "MODD", "MOGO", "MOLN",
-  "MOR", "MOTS", "MOXC", "MRAI", "MRIN", "MRKR", "MRM", "MRNS",
-  "MSGM", "MSPR", "MTC", "MTEK", "MTEM", "MTEX", "MTNB", "MULN",
-  "MVIS", "MVST", "MXCT", "MYNZ", "MYO", "MYPS", "NA", "NAII",
-  "NAOV", "NBIS", "NBSE", "NCNA", "NCPL", "NCRA", "NCSM", "NCTY",
-  "NEOV", "NEPH", "NERV", "NEUE", "NEXI", "NFE", "NIPG", "NISN",
-  "NIU", "NIVF", "NKLA", "NMTC", "NN", "NNAVF", "NNDM", "NNE",
-  "NPCE", "NRBO", "NRSN", "NRXP", "NSPR", "NSSC", "NTGR", "NTHI",
-  "NTLA", "NTRP", "NUKK", "NURO", "NUTX", "NUWE", "NUZE", "NVCN",
-  "NVCT", "NVNI", "NVNO", "NVOS", "NVVE", "NWGL", "NWTN", "NXGL",
-  "NXL", "NXTC", "OB", "OCEA", "OCEL", "OCG", "OCS", "OCSL",
-  "OCUL", "OCX", "ODD", "OESX", "OGCP", "OGI", "OGN", "OKLO",
-  "OKYO", "OLB", "OMER", "OMEX", "OMGA", "OMH", "ONCO", "ONCS",
-  "ONCY", "ONDS", "ONFO", "ONMD", "OP", "OPAD", "OPI", "OPRT",
-  "OPRX", "OPT", "OPTT", "OPXS", "ORGN", "ORGS", "ORIC", "ORMP",
-  "ORN", "ORNF", "ORTX", "OSPN", "OSPR", "OST", "OSTX", "OTLK",
-  "OTRK", "OTRO", "OUST", "OXBR", "OXSQ", "PACB", "PAGP", "PAHC",
-  "PAL", "PALI", "PASG", "PAVM", "PAYS", "PBHC", "PBLA", "PBM",
-  "PBPB", "PBT", "PBYI", "PCRX", "PCSA", "PDLB", "PDS", "PDSB",
-  "PEGY", "PEPL", "PERF", "PESI", "PET", "PFC", "PFG", "PFIE",
-  "PFMT", "PHAR", "PHGE", "PHIO", "PHUN", "PIK", "PIRS", "PIXY",
-  "PLAG", "PLAY", "PLCE", "PLG", "PLPC", "PLRX", "PLSE", "PLTM",
-  "PLUR", "PLUS", "PLX", "PME", "PMEC", "PMNT", "PMVP", "PNRG",
-  "PNT", "POAI", "PODC", "POL", "POLA", "POSC", "POWW", "PPC",
-  "PPSI", "PPTA", "PRAX", "PRCH", "PRDO", "PRFX", "PRGO", "PRLB",
-  "PRLD", "PROC", "PROF", "PROV", "PRPL", "PRPO", "PRSO", "PRTC",
-  "PRTG", "PRTH", "PRTK", "PRTS", "PRVA", "PSEC", "PSHG", "PSIG",
-  "PSIX", "PSNL", "PSTV", "PSTX", "PT", "PTC", "PTCT", "PTE",
-  "PTEN", "PTGX", "PTHL", "PTIX", "PTLO", "PTMN", "PTN", "PTON",
-  "PTPI", "PTSI", "PVBC", "PW", "PWFL", "PWM", "PWOD", "PWP",
-  "PXLW", "PXS", "PYPD", "PYR", "PYXS", "QIPT", "QLGN", "QMCO",
-  "QNCX", "QNRX", "QNST", "QQQG", "QRHC", "QRTEA", "QRTEB", "QSI",
-  "QTI", "QTRX", "QTTB", "QUBT", "QURE", "QVCGA", "RANI", "RAYA",
-  "RBCN", "RCAT", "RCEL", "RCKY", "RCM", "RCMT", "RCON", "RDAG",
-  "RDCM", "RDFN", "RDHL", "RDIB", "RDNT", "RDUS", "RDWR", "RDY",
-  "REAL", "REAX", "REBN", "RECT", "REE", "REFI", "REFR", "REGN",
-  "REKR", "RELI", "RELL", "RELY", "REM", "RENT", "REPL", "REPX",
-  "RETA", "RETO", "REVB", "REVG", "REX", "RFAC", "RFIL", "RFL",
-  "RGC", "RGLD", "RGNX", "RGP", "RGS", "RGTI", "RHE", "RICK"
-];
+// Curated Nasdaq tickers in three thematic baskets.
+// All historically trade as deep-penny names (often < $1.50).
+// Yahoo Finance has no native screener, so we maintain this watchlist.
+
+export type Category = "ai" | "biotech" | "ev";
+
+export type CategoryMeta = {
+  id: Category;
+  label: string;
+  thesis: string;
+  badge: string;          // short chip text
+  color: string;          // tailwind base color
+  accent: string;         // hex for charts/highlights
+};
+
+export const CATEGORIES: Record<Category, CategoryMeta> = {
+  ai: {
+    id: "ai",
+    label: "AI Infrastructure",
+    thesis: "Technology-based · chip & AI-platform startups",
+    badge: "AI",
+    color: "violet",
+    accent: "#8b5cf6",
+  },
+  biotech: {
+    id: "biotech",
+    label: "Healthcare",
+    thesis: "Demographic tailwind · mRNA platforms, genomics, biotech",
+    badge: "BIO",
+    color: "emerald",
+    accent: "#10b981",
+  },
+  ev: {
+    id: "ev",
+    label: "Clean Energy",
+    thesis: "Policy locked-in · EV, battery, charging infrastructure",
+    badge: "EV",
+    color: "amber",
+    accent: "#f59e0b",
+  },
+};
+
+export type CategorizedTicker = {
+  symbol: string;
+  category: Category;
+  subtheme: string;
+};
+
+export const TICKERS: CategorizedTicker[] = [
+  // ─── AI INFRASTRUCTURE / CHIP STARTUPS ───────────────────────────
+  { symbol: "BBAI",   category: "ai", subtheme: "AI analytics platform" },
+  { symbol: "GFAI",   category: "ai", subtheme: "Computer vision AI" },
+  { symbol: "AGFY",   category: "ai", subtheme: "AI ag-tech" },
+  { symbol: "AISP",   category: "ai", subtheme: "Edge AI / video" },
+  { symbol: "HOLO",   category: "ai", subtheme: "Holographic AI" },
+  { symbol: "WIMI",   category: "ai", subtheme: "Holographic AI / China" },
+  { symbol: "MARK",   category: "ai", subtheme: "AI media / data" },
+  { symbol: "DATS",   category: "ai", subtheme: "AI messaging" },
+  { symbol: "INM",    category: "ai", subtheme: "AI bio computing" },
+  { symbol: "VERB",   category: "ai", subtheme: "AI commerce" },
+  { symbol: "MGRX",   category: "ai", subtheme: "AI healthtech" },
+  { symbol: "MLGO",   category: "ai", subtheme: "Big-data analytics" },
+  { symbol: "MDAI",   category: "ai", subtheme: "Medical AI" },
+  { symbol: "QMCO",   category: "ai", subtheme: "AI data infrastructure" },
+  { symbol: "SOUN",   category: "ai", subtheme: "Voice AI" },
+  { symbol: "LASE",   category: "ai", subtheme: "Photonics / chip mfg" },
+  { symbol: "RGTI",   category: "ai", subtheme: "Quantum computing" },
+  { symbol: "QUBT",   category: "ai", subtheme: "Quantum tech" },
+  { symbol: "MRAI",   category: "ai", subtheme: "AI vision" },
+  { symbol: "POAI",   category: "ai", subtheme: "Predictive oncology AI" },
+  { symbol: "MOBX",   category: "ai", subtheme: "AI mobility" },
+  { symbol: "CXAI",   category: "ai", subtheme: "Workplace AI" },
+  { symbol: "CETX",   category: "ai", subtheme: "AI hardware" },
+  { symbol: "DRCT",   category: "ai", subtheme: "AI ad-tech" },
+  { symbol: "GROM",   category: "ai", subtheme: "AI media" },
+  { symbol: "BTBT",   category: "ai", subtheme: "Crypto / AI compute" },
+  { symbol: "KOPN",   category: "ai", subtheme: "AR / micro-displays" },
+  { symbol: "KULR",   category: "ai", subtheme: "Battery + AI thermal" },
+  { symbol: "PRSO",   category: "ai", subtheme: "5G + AI silicon" },
+  { symbol: "RCAT",   category: "ai", subtheme: "Drone AI" },
+  { symbol: "SISI",   category: "ai", subtheme: "AI software" },
+  { symbol: "ZJYL",   category: "ai", subtheme: "AI medical" },
+
+  // ─── HEALTHCARE / mRNA · GENOMICS · BIOTECH ──────────────────────
+  { symbol: "OCGN",   category: "biotech", subtheme: "Gene therapy" },
+  { symbol: "INO",    category: "biotech", subtheme: "DNA medicine" },
+  { symbol: "MRNS",   category: "biotech", subtheme: "Neurology biotech" },
+  { symbol: "PHIO",   category: "biotech", subtheme: "RNAi platform" },
+  { symbol: "NRBO",   category: "biotech", subtheme: "Neurology / metabolic" },
+  { symbol: "ENVB",   category: "biotech", subtheme: "Psychedelic biotech" },
+  { symbol: "VYNE",   category: "biotech", subtheme: "Dermatology" },
+  { symbol: "CYCC",   category: "biotech", subtheme: "Oncology" },
+  { symbol: "DRMA",   category: "biotech", subtheme: "Acne / dermatology" },
+  { symbol: "KALA",   category: "biotech", subtheme: "Eye disease" },
+  { symbol: "KPRX",   category: "biotech", subtheme: "Allergy biotech" },
+  { symbol: "PALI",   category: "biotech", subtheme: "Hormone therapy" },
+  { symbol: "ELYM",   category: "biotech", subtheme: "Neurology biotech" },
+  { symbol: "HEPA",   category: "biotech", subtheme: "Liver disease" },
+  { symbol: "IMNN",   category: "biotech", subtheme: "Cancer immunotherapy" },
+  { symbol: "IMRX",   category: "biotech", subtheme: "Genomic medicine" },
+  { symbol: "JAGX",   category: "biotech", subtheme: "GI biotech" },
+  { symbol: "ONCY",   category: "biotech", subtheme: "Oncolytic virus" },
+  { symbol: "ONCS",   category: "biotech", subtheme: "Cancer immunotherapy" },
+  { symbol: "ONCO",   category: "biotech", subtheme: "Oncology" },
+  { symbol: "AGEN",   category: "biotech", subtheme: "Cancer immunotherapy" },
+  { symbol: "ATAI",   category: "biot
